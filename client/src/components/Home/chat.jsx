@@ -131,9 +131,9 @@ const Chat = () => {
                     sx={{
                       width: '60vw',
                       height: '40vh',
-                      // backgroundColor:
-                      //   theme.palette.mode === "light" &&
-                      //   "#eeeeee",
+                      backgroundColor:
+                        theme.palette.mode === "light" &&
+                        "#eeeeee",
 
                       backgroundImage:`url(${backgroundImage})`,
                       backgroundSize: 'cover'
