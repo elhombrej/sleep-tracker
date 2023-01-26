@@ -131,9 +131,12 @@ const Chat = () => {
                     sx={{
                       width: '60vw',
                       height: '40vh',
-                      backgroundColor:
-                        theme.palette.mode === "light" &&
-                        "#eeeeee",
+                      // backgroundColor:
+                      //   theme.palette.mode === "light" &&
+                      //   "#eeeeee",
+
+                      backgroundImage:`url(${backgroundImage})`,
+                      backgroundSize: 'cover'
                     }}
                   // className={classes.bgImage}
                   >
@@ -320,6 +323,7 @@ const useStyles = makeStyles(() => ({
   },
 
   bgImage: {
-    backgroundImage: `url(${backgroundImage})`
+    backgroundImage: `url(${backgroundImage})`,
+    blockSize: '300px',
   },
 }));
