@@ -12,10 +12,11 @@ export default function LoadingPayment() {
   let yourDate = new Date().toISOString().split("T")[0];
   const { isGoogleUser, isPasswordSetUp, planExpDate, payPlan } =
     useAuthContext();
-  const currentUser = useSelector((state) => state?.users.currentUser);
+  const currentUser = useSelector((state) => state?.users?.currentUser);
   const planExpirationDate = useSelector(
-    (state) => state?.users.planExpirationDate
+    (state) => state?.users?.planExpirationDate
   );
+  console.log("planExpirationDate", planExpirationDate);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getUsersPlanExpDate(currentUser.id));
@@ -26,6 +27,10 @@ export default function LoadingPayment() {
     payPlan(planExpirationDate);
     count2++;
   }
+
+  console.log("currentUser", currentUser);
+  console.log("planExpDate", planExpDate);
+
   if (currentUser.plan && currentUser.plan !== null && planExpDate > yourDate) {
     if (isGoogleUser === "true" && isPasswordSetUp === "false") {
       return <Navigate to="/private/profile" />;
@@ -42,4 +47,3 @@ export default function LoadingPayment() {
     </div>
   );
 }
- 
